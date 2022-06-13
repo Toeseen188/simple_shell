@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
 	printf("#cisfun$ ");
 
 	/* getline input from stdin and save in buffer */
-	getline(&string, &size, stdin);
+	if (getline(&string, &size, stdin) == EOF)
+		break;
 
 	/* get rid of trailing spaces and newline by adding NULL */
 	if (string[strlen(string) - 1] == '\n')
