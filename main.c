@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	/* exit if "exit" is typed */
 	if (strncmp(string, "exit", 4) == 0)
 	break;
-	/* get string token if seperated by space */
+
 	token =	strtok(string, "\n");
 	while (token)
 	token = strtok(NULL, "\n");
