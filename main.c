@@ -38,10 +38,13 @@ int main(int argc, char *argv[])
 	if (strncmp(string, "exit", 4) == 0)
 	break;
 	/* get string token if seperated by space */
-	token =	strtok(string, " ");
+	token =	strtok(string, "\n");
 	while (token)
-	token = strtok(NULL, " ");
-	process(&string);								}
+	token = strtok(NULL, "\n");
+	
+	/* call process fun*/
+	process(&string);
+	}
 	/* free memory */
 	free(string);
 	return (0);
