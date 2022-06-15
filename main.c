@@ -29,8 +29,10 @@ int main(int argc, char *argv[])
 
 	/* getline input from stdin and save in buffer */
 	if (getline(&string, &size, stdin) == EOF)
+	{
 		printf("^D\n");
 		break;
+	}
 
 	/* get rid of trailing spaces and newline by adding NULL */
 	if (string[strlen(string) - 1] == '\n')
