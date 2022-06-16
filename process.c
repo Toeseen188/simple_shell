@@ -12,14 +12,14 @@ int process(char **cmd)
 	int status = 0;
 	char *store;
 	char *envp[] = { NULL };
-
+	
 	/*create a child process */
 	child_pid = fork();
-	
+
 	/* handle errors */
 	if (child_pid == -1)
 	{
-	perror("Error: ");
+perror("Error: ");
 	return (1);
 	}
 	
@@ -29,16 +29,16 @@ int process(char **cmd)
 	
 	/* execute if first param is a path or valid */
 	execve(cmd[0], cmd, envp);
-
+	
 	/* else, create a buffer and do the following */
 	store = malloc(SIZE);
-
+	
 	/* save /bin/ls into store */
 	strcpy(store, "/bin/");
 
 	/* concatenate cmd with "/bin/" */
 	strcat(store, *cmd);
-
+	
 	/* execute store and give error if -1 is returned */
 	if (execve(store, &store, envp) == -1)
 	{
@@ -50,5 +50,5 @@ int process(char **cmd)
 	else
 	/* wait for the child process to return */
 	wait(&status);
-	return (0);
+return (0);
 }

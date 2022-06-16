@@ -25,24 +25,23 @@ int main(int argc, char *argv[])
 	string = malloc(size);
 	while (1)
 	{
-	printf("#cisfun$ ");
-
+	prompt();
 	/* getline input from stdin and save in buffer */
 	if (getline(&string, &size, stdin) == EOF)
 	{
-		printf("^D\n");
-		break;
+	printf("\n");
+	break;
 	}
-
+	
 	/* get rid of trailing spaces and newline by adding NULL */
 	if (string[strlen(string) - 1] == '\n')
 	string[strlen(string) - 1] = '\0';
-
+	
 	/* exit if "exit" is typed */
 	if (strncmp(string, "exit", 4) == 0)
 	break;
-
-	token =	strtok(string, "\n");
+	
+	token =strtok(string, "\n");
 	while (token)
 	token = strtok(NULL, "\n");
 	

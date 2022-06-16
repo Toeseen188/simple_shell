@@ -7,5 +7,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+void prompt();
 int process(char **cmd);
 #endif
