@@ -10,4 +10,5 @@
 void prompt();
 int process(char **cmd);
 int _getline(char *string);
+int built_in(char *string);
 #endif

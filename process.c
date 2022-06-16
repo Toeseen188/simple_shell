@@ -11,7 +11,9 @@ int process(char **cmd)
 	char *store;
 	char *envp[] = { NULL };
 
-	/* if a child is created? */
+	/* check if not a built-in command and continue */
+	if (!built_in(*cmd))
+	{
 	if (fork() == 0)
 	{
 	/* execute if first param is a path or valid */
@@ -33,5 +35,6 @@ int process(char **cmd)
 	else
 	/* wait for the child process to return */
 	wait(NULL);
+	}
 return (0);
 }

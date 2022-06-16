@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *string;
 	char *token;
 	/* handles numbers of arguments*/
-	if (argc >= 2)
+	if (argc > 1)
 	{
 	if (execve(argv[1], argv, NULL) == -1)
 	{

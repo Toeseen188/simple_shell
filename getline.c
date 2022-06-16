@@ -6,18 +6,15 @@
 */
 int _getline(char *string)
 {
-	size_t size = SIZE;
-
-	if (getline(&string, &size, stdin) == EOF)
+	/* gets string input into buffer*/
+	if (fgets(string, SIZE, stdin) == NULL && ferror(stdin))
+	perror("fget error");
+	/* EOF */
+	if (feof(stdin))
 	{
 	printf("\n");
+	fflush(stdout);
 	exit(0);
 	}
-	/* get rid of trailing newlines*/
-	if (string[strlen(string) - 1] == '\n')
-	string[strlen(string) - 1] = '\0';
-	/* exit if 'exit" is typed */
-	if (strncmp(string, "exit", 4) == 0)
-	exit(0);
 return (0);
 }
