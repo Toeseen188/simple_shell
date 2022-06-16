@@ -9,4 +9,5 @@
 #include <string.h>
 void prompt();
 int process(char **cmd);
+int _getline(char *string);
 #endif

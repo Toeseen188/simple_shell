@@ -26,25 +26,10 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 	prompt();
-	/* getline input from stdin and save in buffer */
-	if (getline(&string, &size, stdin) == EOF)
-	{
-	printf("\n");
-	break;
-	}
-	
-	/* get rid of trailing spaces and newline by adding NULL */
-	if (string[strlen(string) - 1] == '\n')
-	string[strlen(string) - 1] = '\0';
-	
-	/* exit if "exit" is typed */
-	if (strncmp(string, "exit", 4) == 0)
-	break;
-	
-	token =strtok(string, "\n");
+	_getline(string);
+	token = strtok(string, "\n");
 	while (token)
 	token = strtok(NULL, "\n");
-	
 	/* call process fun*/
 	process(&string);
 	}

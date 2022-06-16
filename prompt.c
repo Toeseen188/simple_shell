@@ -4,7 +4,7 @@
  * takes no argument
  * Return: void
 */
-void prompt()
+void prompt(void)
 {
 	/* display pompt */
 	printf("#cisfun$ ");
